@@ -13,7 +13,7 @@ jobs:
        - name: remove pkg and setting repo
          run: |
             sudo apt update && sudo apt install wget zip
-            wget -qO - https://github.com/SA-17/Recovery_builder/raw/main/scripts/cleanup.sh  | bash
+            wget -qO - https://github.com/DZZN-DEV/Recovery_builder-sh/raw/main/scripts/cleanup.sh  | bash
             sudo -E apt-get -qq update
             sudo -E apt-get -qq install bc build-essential tar zip curl libstdc++6 git wget python gcc clang libssl-dev repo rsync flex curl  bison aria2
             sudo curl --create-dirs -L -o /usr/local/bin/repo -O -L https://storage.googleapis.com/git-repo-downloads/repo
@@ -43,7 +43,7 @@ jobs:
        - name: Release recovery
          uses: softprops/action-gh-release@v1
          env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
          with:
           tag_name: ${{ github.run_id }}
           name: recovery image
