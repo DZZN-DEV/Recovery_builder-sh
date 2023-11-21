@@ -4,7 +4,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
 
     steps:
        - name: Init the System
@@ -38,7 +38,7 @@ jobs:
          run: |
               source config.sh
               cd work
-              wget -qO - https://github.com/SA-17/Recovery_builder/raw/main/scripts/bake.sh  | bash
+              wget -qO - https://github.com/DZZN-DEV/Recovery_builder-sh/raw/main/scripts/bake.sh  | bash
 
        - name: Release recovery
          uses: softprops/action-gh-release@v1
